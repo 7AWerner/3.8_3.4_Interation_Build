@@ -1,56 +1,68 @@
+<?php
+
+	ob_start();
+	session_start();
+		$error = NULL;
+		if($_SERVER["REQUEST_METHOD"] == "POST") {
+			//connect.php (tells where to connect servername, dbaseName, username, password)
+			require "connect.php";
+			//username and password sent from form
+			$myusername = mysqli_real_escape_string($conn,$_POST['username']);
+			$mypassword = mysqli_real_escape_string($conn,$_POST['password']);
+			
+			$query = "SELECT User FROM User_ID WHERE User = '$myusername' and Password = '$mypassword'";
+			
+			$result = mysqli_query($conn,$query);
+			$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+			
+			$count = mysqli_num_rows($result);
+			
+			// if result matched $myusername and $mypassword, table row must be 1 row
+			
+			if($count == 1 && $_SESSION['index3.php'] = $myusername) {
+
+				if($myusername == "Graeme") {
+					$_SESSION['login_user'] = $myusername;
+					header("location: index4.php");
+				}
+
+				else {
+					$_SESSION['login_user'] = $myusername;
+					header("location: index.php");
+				}
+			}
+
+			// if result matched $myusername and $mypassword, table row must be 1 row
+			
+			else { 
+				$error = "ERROR! Your Login Name or Password is invalid";
+				}
+			}
+	ob_end_flush();
+?>
+
 <head>
-<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style2.css"/>
 </head>
 <body>
-<header class="page-header">
-  <nav>
-    <div class="trigger-menu-wrapper">
-      <button class="trigger-menu">
-        <svg width="12" height="12" viewBox="0 0 24 24">
-          <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
-        </svg>
-        <span>MENU</span>
-      </button>
-    </div>
-    <ul class="menu">
-		<li><a href="index.html">Home</a></li>
-
-		<li><a href="index2.html">The Tour</a></li>
-		<li><a href="contact.html">Contact Form</a></li>
-
-    </ul>
-  </nav>
-</header>
-
 		<div class = "container">
-			<div class = "header">				
-				 <img src = "images/logo.png" align="left" style="width:412px; height:100px; overflow:hidden;" >
-			</div>				
-			
-		<div class = "section">
-			
-				<div id="thumbnails">
-				
-				<a href="images/bird2.jpg">
-					<img src="images/bird1.jpg" align="right"></a>
-				
-				</div>
-
-				<h2>Welcome To Gannet Beach Adventures</h2>	
-				
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>				
-		
-		</div>
-		
-		<div class = "footer">
-		&copy; Copyright Arthur Werner, Tawa College 2021
-		</div>
-		<a class="top-link"id="js-top">
-		  <img src = "images/top.png" style="width:70px; height:70px;">
-		</a>
-		</div>
-			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-			<script type="text/javascript" src="js/07-gallery.js"></script>
-			<script type="text/javascript" src="js/topup.js"></script>
-			<script type="text/javascript" src="js/scroll.js"></script>
+			<div class = "nav">
+				<img src="images/banner.jpg">
+				<div style="font-size:3vw;" class="middle"><h1>ROK Music</h1></div>
+  			</div>				
+	
+			<div class="section"><!-- Holds the main page content -->
+				<h2 style="font-size:2vw;">Sign In</h2>
+				<hr>
+					<h2><form method = "post" id = "index3.php">
+						<label for = 'login' style="font-size:2vw;">Username:</label>
+						<input style="font-size:1vw;" type = "text" name  = "username" placeholder = "Enter username"/><br/>
+						<label for = 'login' style="font-size:2vw;">Password:</label>
+						<input style="font-size:1vw;" type = "password" name = "password" placeholder = "Enter password"/><br/>
+						<button type = "submit" style="float: right;"><h2 style="font-size:1.5vw;">Login In</h2></button>
+						<a href="user/add.php" style="float: right;"><h2 style="font-size:1.5vw;">Sign Up</h2></a>
+					</form></h2>
+					<h3 class = "grey"><?php echo $error; ?></h3>
+			</div>					
+	</div>
 </body>
