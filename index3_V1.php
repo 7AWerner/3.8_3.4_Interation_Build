@@ -23,7 +23,7 @@
 
 				if($myusername == "Graeme") {
 					$_SESSION['login_user'] = $myusername;
-					header("location: index4.php");
+					header("location: admin.php");
 				}
 
 				else {
@@ -59,8 +59,8 @@
 						<input style="font-size:1vw;" type = "text" name  = "username" placeholder = "Enter username"/><br/>
 						<label for = 'login' style="font-size:2vw;">Password:</label>
 						<input style="font-size:1vw;" type = "password" name = "password" placeholder = "Enter password"/><br/>
-						<button type = "submit" style="float: right;"><h2 style="font-size:1.5vw;">Login In</h2></button>
-						<a href="user/add.php" style="float: right;"><h2 style="font-size:1.5vw;">Sign Up</h2></a>
+						<button type = "submit" style="float: right;"><h3 style="font-size:1.5vw;">Login In</h3></button>
+						<a href="user/add.php" style="float: right;"><h3 style="font-size:1.5vw;">Sign Up</h3></a>
 					</form></h2>
 					<h3 class = "grey"><?php echo $error; ?></h3>
 			</div>					
