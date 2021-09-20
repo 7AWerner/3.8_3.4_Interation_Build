@@ -12,8 +12,6 @@
 <head>
 	<!--This connects the page to  the css-->
 	<link rel="stylesheet" href="css/style.css"/>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -36,7 +34,7 @@
 	<div class = "container">		
 		<div class = "section">
 			<div id="stop"></div>
-				<h1 style="font-size:2vw;">All Of Graeme's Music</h1>	
+				<h1 style="font-size:2vw;">>All Of Graemes Music</h1>	
 				
 				<!--The titles of the content-->
 				<heading1 style="font-size:1.5vw;">
@@ -48,7 +46,7 @@
 					<Duration1><h4>Duration</h4></Duration1>
 					<Space></Space>
 				</heading1>		
-				<hr>
+				
 				<?php
 						//Connects this page with my database on PHPMyAdmin
 						require "connect.php";
@@ -56,12 +54,16 @@
 						//Creates a varible to store the sql query
 						$query = ("SELECT s.Song_ID, t.Title, a.Artist, b.Album, e.Genre, SEC_TO_TIME((`Duration`)) AS Duration  
 						FROM SongDetails s
+
 						JOIN SongArtist j ON s.Song_ID = j.Song_ID
 						JOIN Artist_ID a ON a.Artist_ID = j.Artist_ID
+
 						JOIN SongGenre g ON s.Song_ID = g.Song_ID
 						JOIN Genre_ID e ON e.Genre_ID = g.Genre_ID
+
 						JOIN Title_ID t ON s.Title_ID = t.Title_ID
 						JOIN Album_ID b ON s.Album_ID = b.Album_ID
+
 						ORDER BY s.Song_ID ASC");
 
 						//Runs and stores the query using the varibles $con (see nav.php) and $query
@@ -69,18 +71,19 @@
 						//runs in a 'while' loop
 						while($output=mysqli_fetch_array($result))
 						{
+					
 					?>
 					<!--php is above. HTML is below. Used to output the query results-->
 						
-					<heading style="font-size:1.1vw;">
+					<heading style="font-size:1vw;">
 						<SongID2><p><?php echo $output['Song_ID']; ?></p></SongID2>
-						<Title2><div><p style= "border-right: 0.1vw solid grey;"><?php echo $output['Title']; ?></p></div></Title2>
+						<Title2><p><?php echo $output['Title']; ?></p></Title2>
 						<Artist2><p><?php echo $output['Artist']; ?></p></Artist2>
 						<Album2><p><?php echo $output['Album']; ?></p></Album2>
 						<Genre2><p><?php echo $output['Genre']; ?></p></Genre2>
 						<Duration2><p><?php echo $output['Duration']; ?></p></Duration2>
+						<Space></Space>
 					</heading>
-			
 					<?php
 					//Closes the output while loop
 					}
