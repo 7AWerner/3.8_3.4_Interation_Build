@@ -1,0 +1,308 @@
+
+/*----------   CSS FOR THE MAIN CONTENT AND MUSIC QUERYS   ----------*/
+
+
+
+/* RESET RULES & HELPER CLASSES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap'); /*Noto Sans JP Font*/
+
+:root {
+  --white: #fff;
+  --black: #221f1f;
+  --lightpurple: #9e91f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+
+body {
+	position: relative;
+	background-image: url('../images/background.jpg'); /*This is what is used throughout my website as the background*/
+	background-repeat: no-repeat;
+	background-position: center;	
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*This creates the grids for the content to align to*/
+
+.container {
+	display: grid;
+	grid-template-columns: 100px 150px auto;
+	grid-template-rows: auto 1fr;
+	height: 90%;
+	overflow: hidden;
+}
+
+.header {
+	box-sizing: border-box;
+	grid-column-start: 1;
+	grid-column-end:span 3;	
+	background-color: rgba(0,0,0, 0.9);
+
+}
+
+.header h1{
+	padding: auto;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: auto;
+    
+    display: inline-block;
+}
+
+.header .link{
+	grid-column-start: 2;
+	grid-column-end:span 3;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: auto;
+	text-align: center;
+    margin: auto;
+}
+
+.header li {
+	left: 10%;	
+}
+
+.link {
+ 	left: 50%;
+	display: inline-block;
+}
+
+.link img {
+	width: 100%;
+	max-width: 40px;
+	height: auto;
+	display: inline-block;
+	top: 10%;
+}
+
+ul, li {
+    font-size: auto;
+    font-weight:900;
+    display: inline-block;
+    cursor: pointer;
+	position: relative;
+    padding-left: 0.2em;
+}
+
+a {
+	color: white;	
+}
+
+a:hover {color:black;}  /*mouse over link */
+
+ul li:hover{	
+	border-radius: 25px;
+	margin: auto;
+}
+
+/*Drop Down */
+ul li ul li { 
+  	font-family: Arial;
+  	font-size: 16px;
+  	font-weight: bold;
+  	background: rgb(0, 174, 255);
+  	display: block; 
+  	text-align: left;
+	padding: 0.5em;
+	 display: block;
+	z-index: 1;
+}
+
+/*This is the main structure for the nav placing it where it currently is*/
+ul li ul {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  width: 180px;
+  display: none;
+}
+
+/*Gives the nav color*/
+ul li:hover {
+  background: rgb(0, 174, 255);
+  }
+
+ul li ul li:hover { background: #85b7ec;}
+
+/*Displays the dropdown*/
+ul li:hover ul {
+  	display: block;
+	
+}
+
+heading1 {
+	grid-template-rows: 20%;	
+}
+
+/*The code used to sort the querys on the page */
+
+heading, heading1{
+	width: 85%;
+	height: auto;
+	display: grid;
+	grid-gap: 1%;
+	grid-template-columns: 5% 25% 16% 28% 13% 10%;
+	margin: auto;
+	overflow-wrap: break-word;
+}
+
+heading {
+	grid-template-rows: 10%;
+	background: white;
+	border: black;
+	border-style: solid;
+	border-width: thin;
+}
+
+.section p, h4{
+	font-family: 'PT Sans', sans-serif;
+	font-size: auto;
+}
+
+.section h1 {
+	padding: 0.2em;
+}
+
+.page {
+	left: 50%;
+	margin: auto;
+	text-align: center;
+}
+
+.page li {
+	display: inline-block;
+	grid-gap: 1%;
+	grid-template-columns: 31.67%;
+	grid-template-rows: 80px;
+	padding: 0.2em;
+}
+
+SongID2, Title2, Artist2, Album2, Genre2, Duration2 {
+
+}
+
+SongID2 {
+	padding-left: 1.5%;	
+}
+
+/*Makes scrolling smooth */
+
+* { 
+	scroll-behavior: smooth;
+}
+
+/*The main section that holds all of my content */
+.section {
+	background-color: rgba(43, 43, 43, 0.6);
+	grid-column-start: 1;
+	grid-column-end:span 3;
+	grid-row: 2;
+	width: 95%;
+	height: 100%;
+	overflow: auto;
+	margin: auto;
+	color: #000
+}
+
+.section h1 {
+	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+  
+.section2{
+	grid-column-start: 1;
+	grid-column-end:span 3;
+	grid-row: 2;
+	width: 20%;
+	height: 20%;
+	overflow: auto;
+	margin: auto;
+	border: 2px solid #fff;
+}
+
+/*This is the code for the to top button */
+
+.top-link {
+  	transition: all .25s ease-in-out;
+  	position: fixed;
+  	bottom: 1%;
+  	right: 4%;
+  	cursor: pointer;
+  	margin: 0 1em 3em 0;
+  	border-radius: 0%;
+  }
+  
+/*Makes the size of the img */
+.top-link img {
+	width: 100%;
+	max-width: 50px;
+	height: auto;
+}
+
+h1 {
+ 	color: white;
+}
+
+h2 {
+	padding: 10px;
+	font-weight:bold;
+	font-style:italic;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 10px;
+	color: white;
+}
+
+h3 {
+	color: white;	
+}
+
+h4 {
+ 	color: white;
+	padding: 0.2em;
+}
+
+p {
+	font-weight:600;
+	color: black;
+	padding: 3%;
+}
+
+.grey{
+	left: 50%;	
+	
+}
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  	width: 1em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #5e5e5e;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #ab3bdb;
+}
