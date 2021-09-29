@@ -1,0 +1,271 @@
+
+/*----------   THIS IS CSS FOR USER SETTING   ----------*/
+
+
+
+/* RESET RULES & HELPER CLASSES –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap'); /*Noto Sans JP Font*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+body {
+	position: relative;
+	background-image: url('../images/background.jpg'); /*This is what is used throughout my website as the background*/
+	background-repeat: no-repeat;
+	background-position: center;	
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+/*This creates the grids for the content to align to*/
+
+.container {
+	display: grid;
+	grid-template-columns: 100px 150px auto;
+	grid-template-rows: auto 1fr;
+	height: 80%;
+}
+
+.header {
+	box-sizing: border-box;
+	grid-column-start: 1;
+	grid-column-end:span 3;	
+	background-color: rgba(0,0,0, 0.9);
+
+}
+
+.header h1{
+	padding: auto;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: auto;
+    
+    display: inline-block;
+}
+
+.header li {
+	left: 10%;	
+}
+
+.link {
+ 	left: 50%;
+	display: inline-block;
+}
+
+.link h4{
+	color: white;	
+}
+
+ul, li {
+    font-size: auto;
+    font-weight:900;
+    display: inline-block;
+    cursor: pointer;
+	position: relative;
+    padding-left: 0.2em;
+}
+
+a:hover {color:#1c1a54;}  /*mouse over link */
+
+ul li:hover{
+	background: grey;	
+	border-radius: 25px;
+	margin: auto;
+}
+
+/*Drop Down */
+ul li ul li { 
+  	font-family: Arial;
+  	font-size: 16px;
+  	font-weight: bold;
+  	background: rgb(0, 174, 255);
+  	display: block; 
+  	text-align: left;
+	padding: 0.5em;
+	 display: block;
+	z-index: 1;
+}
+
+/*This is the main structure for the nav placing it where it currently is*/
+ul li ul {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  width: 180px;
+  display: none;
+}
+
+/*Gives the nav color*/
+ul li:hover {
+  background: rgb(0, 174, 255);
+  }
+
+ul li ul li:hover { background: #85b7ec;}
+
+/*Displays the dropdown*/
+ul li:hover ul {
+  display: block;
+}
+
+.section p, h4{
+	font-family: 'PT Sans', sans-serif;
+	font-size: auto;
+}
+
+.section h1 {
+	padding: 0.2em;
+}
+
+.section {
+	background-color: rgba(43, 43, 43, 0.6);
+	grid-column-start: 1;
+	grid-column-end:span 3;
+	grid-row: 2;
+	width: 95%;
+	height: 80%;
+	overflow: auto;
+	margin: auto;
+	color: #000;
+	overflow: hidden;
+}
+
+.section h1 {
+	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1 {
+ 	color: white;
+}
+
+h2 {
+	padding: 10px;
+	font-weight:bold;
+	font-style:italic;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 10px;
+	color: white;
+}
+
+h3 {
+	color: black;	
+}
+
+h4 {
+ 	color: black;
+	padding: 0.2em;
+}
+
+p {
+	padding: auto;
+	color: black;
+}
+
+form {
+	width: 30%;
+	height: 100%;
+ 	background-color: rgba(255, 255, 255, 0.8);
+}
+
+form h1 {
+	color: black;	
+}
+
+form h1 .grey h4{
+	top: 30%;
+	position:relative;
+}
+
+form .info {
+	background: white;
+	border: 2px solid #000;
+	width: 90%;
+	height:	10%;
+	padding: 0.5em;
+	float: center;
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+form input {
+	border-radius: 0.3em;
+	width: auto;
+	max-width: 15em;
+	height: auto;
+	max-height: 2em;
+}
+
+.button {
+	margin: 2%;	
+	padding: 0.5em;
+	border-radius: 10px;
+	font-size: 15px;
+	border: 2px solid #000;		
+}
+
+.side {
+	bottom: 100%;
+	float: right;
+	position:relative;
+	width: 70%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+form, label, h4 {
+	text-align: center;
+}
+
+li.nav a:hover { 
+	color: #fff
+}
+
+form2 {
+	width: 30%;
+	height: 100%;
+ 	background-color: rgba(255, 255, 255, 0.8);
+	position: relative;
+}
+
+form2 h1 {
+	color: black;	
+}
+
+form h1 .grey h4{
+	top: 30%;
+	position:relative;
+}
+
+form .info {
+	background: white;
+	border: 2px solid #000;
+	width: 90%;
+	height:	10%;
+	padding: 0.5em;
+	float: center;
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+form input {
+	border-radius: 0.3em;
+	width: auto;
+	max-width: 15em;
+	height: auto;
+	max-height: 2em;
+}
